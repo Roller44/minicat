@@ -324,8 +324,11 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
         setProgressBarIndeterminateVisibility(false);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
+        //设置标题为“主页”
         setTitle(R.string.page_title_home);
+        //设置滑动抽屉的时候标题显示的@用户名
         mDrawerTitle = "@" + AppContext.getScreenName();
+        //保存目前未打开抽屉时候的标题名
         mTitle = getTitle();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.setScrimColor(getResources().getColor(R.color.drawer_dim_background));
@@ -339,12 +342,14 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
 
             @Override
             public void onDrawerOpened(View drawerView) {
+                //设置 ActionBar 上的名字变为用户名
                 getActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu();
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
+                //设置 ActionBar 上的名字变为“主页”
                 getActionBar().setTitle(mTitle);
                 invalidateOptionsMenu();
             }
@@ -354,8 +359,8 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
                 super.onDrawerStateChanged(newState);
             }
         };
+        //将以上的抽屉打开变换设置放入抽屉监听器
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
 
         mContainer = (ViewGroup) findViewById(R.id.content_frame);
         mDrawFrame = (ViewGroup) findViewById(R.id.left_drawer);
