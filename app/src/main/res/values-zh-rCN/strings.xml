@@ -65,7 +65,7 @@
     <string name="menu_feedback">反馈</string>
 
     <!-- page titles -->
-    <string name="page_title_home">关注的消息</string>
+    <string name="page_title_home">主页</string>
     <string name="page_title_mention">提到我的</string>
     <string name="page_title_public">随便看看</string>
     <string name="page_title_more">栏目</string>

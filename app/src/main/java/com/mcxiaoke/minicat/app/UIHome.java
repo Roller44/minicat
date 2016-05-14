@@ -93,7 +93,7 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppContext.homeVisible = true;
-        MobclickAgent.updateOnlineConfig(this);
+        MobclickAgent.updateOnlineConfig(this);//功能存疑
         if (AppContext.DEBUG) {
             log("onCreate()");
         }

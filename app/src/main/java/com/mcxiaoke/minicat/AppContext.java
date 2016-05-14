@@ -43,7 +43,7 @@ public class AppContext extends Application {
     public static String packageName;
     public static PackageInfo info;
     public static boolean active;
-    public static boolean homeVisible;
+    public static boolean homeVisible;// TL 显示时为真
     private static HashMap<String, WeakReference<Activity>> contexts = new HashMap<String, WeakReference<Activity>>();
     private static AccountInfo accountInfo;
 
@@ -136,6 +136,7 @@ public class AppContext extends Application {
     }
 
     public static boolean isVerified() {
+        //需要查看： com/mcxiaoke/minicat/config/Accountinfo 返回说明账号非空
         return accountInfo != null && accountInfo.isVerified();
     }
 

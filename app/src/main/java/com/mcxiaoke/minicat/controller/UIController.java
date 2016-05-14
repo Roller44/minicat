@@ -91,6 +91,9 @@ public class UIController {
     }
 
     public static void showHome(Activity context) {
+        //新建进入 UIHome Activity 的 intent 并执行跳转，另外 intent 增加了一个标志，清楚前面的判断
+        //Activity （哪怕没有显示出来）
+        //UIHome.java 位于 /com/mcxiaoke/minicat/app
         Intent intent = new Intent(context, UIHome.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);

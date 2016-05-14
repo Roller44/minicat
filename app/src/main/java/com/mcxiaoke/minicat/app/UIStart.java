@@ -14,7 +14,7 @@ public class UIStart extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setVisible(false);
+        setVisible(false);//此 Activity 被设为不可见
         checkLogin();
 
     }
@@ -25,6 +25,7 @@ public class UIStart extends Activity {
     }
 
     private void checkLogin() {
+        //检查是否已经登陆过，如果有，则打开 TL，否则进入登陆界面
         if (AppContext.isVerified()) {
             UIController.showHome(this);
         } else {

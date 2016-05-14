@@ -23,7 +23,7 @@
                 android:id="@+id/viewpager_strip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="4dp" />
+                android:padding="16dp" />
         </android.support.v4.view.ViewPager>
 
     </FrameLayout>
@@ -35,6 +35,9 @@
          The drawer is given a fixed width in dp and extends the full height of
          the container. A solid background is used for contrast
          with the content view. -->
+    <!--android:layout_gravity="check" 告诉 DrawerLayout 将滑动抽屉设置为
+        如果在左边则为自左向右而如果在右边则设置为自右向左。抽屉的像素设置为固定
+        值，高度设定为和背景一致。-->
 
     <FrameLayout
         android:id="@+id/left_drawer"
