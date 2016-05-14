@@ -324,13 +324,18 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
         setProgressBarIndeterminateVisibility(false);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
+        //设置标题为“主页”
         setTitle(R.string.page_title_home);
+        //设置滑动抽屉的时候标题显示的@用户名
         mDrawerTitle = "@" + AppContext.getScreenName();
+        //保存目前未打开抽屉时候的标题名
         mTitle = getTitle();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.setScrimColor(getResources().getColor(R.color.drawer_dim_background));
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close) {
+            //这个类用来将 DrawerLayout 和 ActionBar 的功能结合起来，前两个参数将设置好的抽屉和 Activity
+            //连接了起来，第三个图标是抽屉左上角的图标
 
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
@@ -339,12 +344,14 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
 
             @Override
             public void onDrawerOpened(View drawerView) {
+                //设置 ActionBar 上的名字变为用户名
                 getActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu();
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
+                //设置 ActionBar 上的名字变为“主页”
                 getActionBar().setTitle(mTitle);
                 invalidateOptionsMenu();
             }
@@ -354,9 +361,9 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
                 super.onDrawerStateChanged(newState);
             }
         };
+        //将以上的抽屉打开变换设置放入抽屉监听器
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-
+        //将内容的 fragment 和抽屉的 fragment 放进 ViewGroup 里面，ViewGroup 是一个可以存放多个 view 的“容器”
         mContainer = (ViewGroup) findViewById(R.id.content_frame);
         mDrawFrame = (ViewGroup) findViewById(R.id.left_drawer);
 
