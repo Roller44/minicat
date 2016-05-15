@@ -365,14 +365,20 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         //将内容的 fragment 和抽屉的 fragment 放进 ViewGroup 里面，ViewGroup 是一个可以存放多个 view 的“容器”
-
+        //将放置内容 Java 代码的对象和 XML 的对象连接起来
         mContainer = (ViewGroup) findViewById(R.id.content_frame);
+        //将抽屉 Java 代码的对象和 XML 的对象连接起来
         mDrawFrame = (ViewGroup) findViewById(R.id.left_drawer);
 
+        //将华东页面 Java 代码的对象和 XML 的对象连接起来
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
 //        mViewPager.setOnPageChangeListener(this);
 
+        //设置滑动页面的 Adapter，这里用的是 FragmentPagerAdapter
         mPagesAdapter = new HomePagesAdapter(getFragmentManager(), this);
+        //1.设置滑动页面一共由 3 个（包括显示和不显示的）
+        //2.将霍爱东页面和 Adapter 连接起来（必须步骤）
+        //3.设置一个监听器监听本 Activity 的页面滑动
         mViewPager.setOffscreenPageLimit(3);
         mViewPager.setAdapter(mPagesAdapter);
         mViewPager.addOnPageChangeListener(this);
