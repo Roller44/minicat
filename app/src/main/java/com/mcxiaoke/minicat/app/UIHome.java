@@ -363,11 +363,9 @@ public class UIHome extends UIBaseSupport implements MenuCallback,
         };
         //将以上的抽屉打开变换设置放入抽屉监听器
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-<<<<<<< HEAD
-        //将内容的 fragment 和抽屉的 fragment 放进 ViewGroup 里面，ViewGroup 是一个可以存放多个 view 的“容器”
-=======
 
->>>>>>> 1eb4b494d902aad33253018f7bdaefd3e999a98f
+        //将内容的 fragment 和抽屉的 fragment 放进 ViewGroup 里面，ViewGroup 是一个可以存放多个 view 的“容器”
+
         mContainer = (ViewGroup) findViewById(R.id.content_frame);
         mDrawFrame = (ViewGroup) findViewById(R.id.left_drawer);
 
